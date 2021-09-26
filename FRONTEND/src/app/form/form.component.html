@@ -1,0 +1,57 @@
+<h1>Formulaire</h1>
+<form>
+    <div class="m-3">
+        <label for="nom" class="form-label">Nom :</label>
+        <input type="text" id="nom" name="nom" pattern="^[a-zA-Z]*$" title="Mettre que des lettres" class="form-control" [(ngModel)] = "utilisateur.nom">
+    </div>
+    <div class="m-3">
+        <label for="prenom" class="form-label">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" pattern="^[a-zA-Z]*$" class="form-control" [(ngModel)] = "utilisateur.prenom">
+    </div>
+    <div class="m-3">
+        <label for="adresse" class="form-label">Adresse :</label>
+        <input type="text" id="adresse" name="adresse" class="form-control" [(ngModel)] = "utilisateur.adresse">
+    </div>
+    <div class="m-3">
+        <label for="cp" class="form-label">Code postal :</label>
+        <input type="text" id="cp" name="cp" class="form-control" [(ngModel)] = "utilisateur.cp">
+    </div>
+    <div class="m-3">
+        <label for="ville" class="form-label">Ville :</label>
+        <input type="text" id="ville" name="ville" class="form-control" [(ngModel)] = "utilisateur.ville">
+    </div>
+    <div class="m-3">
+        <label for="tel" class="form-label">Téléphone :</label>
+        <input type="text" id="tel" name="tel" class="form-control" [(ngModel)] = "utilisateur.tel">
+    </div>
+    <div class="m-3">
+        <label for="email" class="form-label">Email :</label>
+        <input type="email" id="email" name="email" pattern="^.*@[a-z]*\.[a-z]*$" class="form-control" [(ngModel)] = "utilisateur.email">
+    </div>
+    <div class="m-3">
+        <label for="civilite" class="form-label">Civilité :</label>
+        <input type="text" id="civilite" name="civilite" class="form-control" [(ngModel)] = "utilisateur.civilite">
+    </div>
+    <div class="m-3">
+        <label for="login" class="form-label">Login :</label>
+        <input type="text" id="login" name="login" class="form-control" [(ngModel)] = "utilisateur.login">
+    </div>
+    <div class="m-3">
+        <label for="pays" class="form-label">Pays :</label>
+        <input type="text" id="pays" name="pays" class="form-control" [(ngModel)] = "utilisateur.pays">
+    </div>
+    <div class="m-3">
+        <label for="password" class="form-label">Password :</label>
+        <input type="password" id="password" name="password" class="form-control" [(ngModel)] = "utilisateur.password">
+    </div>
+    <div class="m-3">
+        <label for="confirmPassword" class="form-label">Confirmer votre password :</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" [(ngModel)] = "confirmPassword">
+    </div>
+    <div class="m-3">
+        <input (click) = "click()" [disabled]="!valid" type="submit" value="Submit" class="btn btn-primary" [(ngModel)] = "valid">
+    </div>
+</form> 
+<div *ngIf="valid">
+    <app-recap [utilisateur] = "utilisateur"></app-recap>
+</div>
